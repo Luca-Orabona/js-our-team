@@ -38,5 +38,22 @@ const teamMembers = [
 ];
 
 
+// Prendiamo il contenitore delle card
+const container = document.getElementById("team-container");
 
+// Usiamo un ciclo per aggiungere ogni card con innerHTML
+for (const member of teamMembers) {
+  const cardHTML = `
+    <div class="team-card">
+      <img src="${member.img}" alt="${member.name}">
+      <div class="info">
+        <h3>${member.name.toUpperCase()}</h3>
+        <p>${member.role}</p>
+        <a href="mailto:${member.email}">${member.email}</a>
+      </div>
+    </div>
+  `;
+
+  container.innerHTML += cardHTML;
+}
 
